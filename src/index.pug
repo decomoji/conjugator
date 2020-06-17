@@ -11,3 +11,14 @@ html(lang="ja")
     script(src="script/index.ts")
 
   body
+    header.Header
+      h1.Title
+        a.__link(href="./") デコモジ・コンジュゲイター
+
+    form#conjugator
+      input#content(type="text", name="content", value="受託")
+      input#reading(type="text", name="reading", value="jutaku")
+      input#conjugateContent(type="text", name="conjugateContent", value="")
+      input#conjugateReading(type="text", name="conjugateReading", value="")
+      
+      textarea#output(name="output", cols="30", rows="10")
