@@ -10,15 +10,46 @@ html(lang="ja")
     link(rel="stylesheet", href="style/index.css")
     script(src="script/index.ts")
 
-  body
+  body.Conjugator
+    h1.VisuallyHidden デコモジ・コンジュゲーター
+    
     header.Header
-      h1.Title
-        a.__link(href="./") デコモジ・コンジュゲイター
+      .Header__inner
+        a.Header__link.-invert(href="./")
+          img.Header__logo(src="image/logo.png", width="42", height="42", alt="デコモジ・コンジュゲーター")
+        p.Header__desc １つの単語から派生するデコモジ活用を自動生成するウェブアプリです。
 
-    form#conjugator
-      input#content(type="text", name="content", value="受託")
-      input#reading(type="text", name="reading", value="jutaku")
-      input#conjugateContent(type="text", name="conjugateContent", value="")
-      input#conjugateReading(type="text", name="conjugateReading", value="")
+    section.Main#conjugator
+      h2.VisuallyHidden デコモジ活用自動生成
+      .Main__row
+        .Row
+          .Row__item.-tight
+            .InputRow
+              label.InputRow__label(for="word") 単語
+              input.InputRow__input#word(type="text", name="word", value="受託")
+            .InputRow
+              label.InputRow__label(for="reading") 読み
+              input.InputRow__input#reading(type="text", name="reading", value="jutaku")
+          .Row__item
+            .InputRow
+              label.InputRow__label(for="conjugateWords") デコモジ活用
+              input.InputRow__input#conjugateWords(type="text", name="conjugateWords", value="")
+            .InputRow
+              label.InputRow__label(for="conjugateReadings") 活用の読み
+              input.InputRow__input#conjugateReadings(type="text", name="conjugateReadings", value="")
       
-      textarea#output(name="output", cols="30", rows="10")
+      .Main__row
+        .Row
+          .Row__item.-half
+            .InputRow
+              label.InputRow__label(for="generatedContent") 生成したデコモジ活用
+              textarea.InputRow__input#generatedContent(name="generatedContent", cols="10", rows="20")
+          .Row__item.-half
+            .InputRow
+              label.InputRow__label(for="generatedReading") 生成した活用の読み
+              textarea.InputRow__input#generatedReading(name="generatedReading", cols="10", rows="20")
+
+    footer.Footer
+      .Footer__inner
+        p.Footer__credit このウェブアプリは#[a.-invert(href="https://twitter.com/otiext", target="_blank", rel="noopener") 越智]が作りました。
+        p.Footer__license #[a.-invert(href="https://github.com/decomoji/conjugator/", target="_blank", rel="noopener") GitHub], MIT License.
