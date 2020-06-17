@@ -7,37 +7,40 @@ import { ConjugateReading } from "./ConjugateReading";
 
 class Conjugator {
   $conjugator: HTMLFormElement;
-  $content: HTMLInputElement;
+  $word: HTMLInputElement;
   $reading: HTMLInputElement;
-  $conjugateContent: HTMLInputElement;
-  $conjugateReading: HTMLInputElement;
-  $output: HTMLTextAreaElement;
+  $conjugateWords: HTMLInputElement;
+  $conjugateReadings: HTMLInputElement;
+  $generatedContent: HTMLTextAreaElement;
+  $generatedReading: HTMLTextAreaElement;
 
   constructor() {
     // 要素を取得する
     this.$conjugator = document.querySelector("#conjugator");
-    this.$content = document.querySelector("#content");
+    this.$word = document.querySelector("#word");
     this.$reading = document.querySelector("#reading");
-    this.$conjugateContent = document.querySelector("#conjugateContent");
-    this.$conjugateReading = document.querySelector("#conjugateReading");
-    this.$output = document.querySelector("#output");
+    this.$conjugateWords = document.querySelector("#conjugateWords");
+    this.$conjugateReadings = document.querySelector("#conjugateReadings");
+    this.$generatedContent = document.querySelector("#generatedContent");
+    this.$generatedReading = document.querySelector("#generatedReading");
 
     // 初期化
     this.init();
   }
 
   get conjugatedContent() {
-    const { value: content } = this.$content;
-    const { value: seed } = this.$conjugateContent;
+    const { value: word } = this.$word;
+    const { value: base } = this.$conjugateWords;
 
-    return seed.split(",").map((v) => v.replace("-", content));
+    return base.split(",").map((v) => v.replace("-", word));
   }
 
   get conjugatedReading() {
     const { value: reading } = this.$reading;
-    const { value: seed } = this.$conjugateReading;
+    const { value: base } = this.$conjugateReadings;
 
-    return seed.split(",").map((v) => v.replace("-", reading));
+    return base.split(",").map((v) => v.replace("-", reading));
+  }
 
   setConjugatedValues() {
     this.$generatedContent.value = this.conjugatedContent.join("\n");
@@ -59,8 +62,8 @@ class Conjugator {
   }
 
   init() {
-    this.$conjugateContent.value = ConjugateContent;
-    this.$conjugateReading.value = ConjugateReading;
+    this.$conjugateWords.value = ConjugateContent;
+    this.$conjugateReadings.value = ConjugateReading;
     this.dispatch();
     this.setConjugatedValues();
   }
