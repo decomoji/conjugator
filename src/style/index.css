@@ -1,37 +1,231 @@
 @charset "UTF-8";
 
+/* 色・幅・夢・静寂・そして愛 */
 :root {
-  --colorBase: #30404f;
-  --colorKey: #336699;
-  --colorUnti: #993366;
+  --colorBlack: #15171a;
+  --colorWhite: #fefeff;
+  --colorTomato: #dd3b40;
+  --colorChocolate: #c05b2c;
+  --colorGold: #9f7e00;
+  --colorOlive: #688200;
+  --colorForest: #008c22;
+  --colorTeal: #008780;
+  --colorCerulean: #0081b1;
+  --colorDenim: #477f9b;
+  --colorDanube: #5d79aa;
+  --colorLavender: #a156d2;
+  --colorAzalea: #d43892;
+  --colorCoral: #a36969;
+  --colorBlackRGB: 21, 23, 26;
+  --colorWhiteRGB: 254, 254, 255;
+  --colorTomatoRGB: 240, 59, 64;
+  --colorChocolateRGB: 192, 91, 44;
+  --colorGoldRGB: 159, 126, 0;
+  --colorOliveRGB: 104, 130, 0;
+  --colorForestRGB: 0, 140, 34;
+  --colorTealRGB: 0, 135, 128;
+  --colorCeruleanRGB: 0, 129, 177;
+  --colorDenimRGB: 71, 127, 155;
+  --colorDanubeRGB: 93, 121, 170;
+  --colorLavenderRGB: 161, 86, 210;
+  --colorAzaleaRGB: 212, 56, 146;
+  --colorCoralRGB: 163, 105, 105;
+
+  --colorBase: var(--colorBlack);
+  --colorBaseInvert: var(--colorWhite);
+  --colorLink: var(--colorDanube);
+  --colorLinkInvert: var(--colorWhite);
+  --colorFocus: rgba(var(--colorDanubeRGB), 0.5);
+  --colorFocusInvert: rgba(var(--colorWhiteRGB), 0.5);
+
+  --bgBase: var(--colorWhite);
+  --bgBand: var(--colorDanube);
+
+  --borderInput: var(--colorBlackRGB);
+  --borderInputFocus: var(--colorDanubeRGB);
+
+  --contentPadding: 0.75rem;
+  --contentWidth: 38rem;
 }
 
+/* いわゆるリセットCSS */
 *,
-*::before,
-*::after {
+::before,
+::after {
   box-sizing: border-box;
 }
 
+html {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  color: var(--colorBase);
+  margin: 0;
+  padding: 0;
+  color: var(--colorBlack);
   font-size: 1rem;
   font-family: "Noto Sans JP", sans-serif;
+  background-color: var(--bgBase);
 }
 
 main {
   display: block;
 }
 
-img {
-  -ms-interpolation-mode: bicubic;
-  border: 0 none;
-  text-decoration: none;
-  vertical-align: top;
-  background: transparent;
+/* Foundation */
+a:link,
+a:visited,
+a:hover,
+a:focus,
+a:active {
+  color: var(--colorLink);
 }
 
-mark {
-  background-color: transparent;
+a.-invert:link,
+a.-invert:visited,
+a.-invert:hover,
+a.-invert:focus,
+a.-invert:active {
+  color: var(--colorLinkInvert);
+}
+
+:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--colorFocus);
+}
+
+.-invert:focus {
+  box-shadow: 0 0 0 4px var(--colorFocusInvert);
+}
+
+/* ヘッダー */
+.Header {
+  color: var(--colorBaseInvert);
+  background-color: var(--bgBand);
+}
+
+.Header__inner {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  padding: var(--contentPadding);
+  max-width: var(--contentWidth);
+}
+
+.Header__inner > * + * {
+  margin-left: 1rem;
+}
+
+.Header__title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.Header__link {
+  display: block;
+  border-radius: 999rem;
+  width: 2.625rem;
+  height: 2.625rem;
+  overflow: hidden;
+}
+
+.Header__logo {
+  display: block;
+}
+
+.Header__desc {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 0.875rem;
+}
+
+/* フッター */
+.Footer {
+  color: var(--colorBaseInvert);
+  background-color: var(--bgBand);
+}
+
+.Footer__inner {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  padding: var(--contentPadding);
+  max-width: var(--contentWidth);
+}
+
+.Footer__inner > * + * {
+  margin-left: 1rem;
+}
+
+.Footer__credit {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 0.8125rem;
+}
+
+.Footer__license {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 0.8125rem;
+}
+
+/* メインエリア */
+.Main {
+  margin: 1rem auto;
+  padding: var(--contentPadding);
+  max-width: var(--contentWidth);
+}
+
+.Main > * + * {
+  margin-top: 1rem;
+}
+
+/* 横並びアイテムを持つコンテナ */
+.Row {
+  display: flex;
+  margin: -0.5rem;
+}
+
+.Row__item {
+  flex: 1 1 auto;
+  padding: 0.5rem;
+}
+
+.Row__item.-tight {
+  max-width: 30%;
+}
+
+.Row__item.-half {
+  max-width: 50%;
+}
+
+.Row__item > * + * {
+  margin-top: 0.5rem;
+}
+
+/* ラベルとフォームを収める箱 */
+.InputRow {
+  color: inherit;
+}
+
+.InputRow__label {
+  display: block;
+  font-size: 0.875rem;
+}
+
+.InputRow__input {
+  padding: 0.375rem;
+  border: 1px solid rgba(var(--borderInput), 0.25);
+  border-radius: 0.125rem;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.4;
+  vertical-align: top;
+}
+
+.InputRow__input:focus {
+  border-color: rgba(var(--borderInputFocus), 1);
 }
 
 /* https://github.com/ampproject/amphtml/blob/2e9a940e78df8de38a6c06a0772aeaa4839a24d1/css/ampshared.css#L164-L204 */
