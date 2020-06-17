@@ -38,11 +38,14 @@ class Conjugator {
     const { value: seed } = this.$conjugateReading;
 
     return seed.split(",").map((v) => v.replace("-", reading));
+
+  setConjugatedValues() {
+    this.$generatedContent.value = this.conjugatedContent.join("\n");
+    this.$generatedReading.value = this.conjugatedReading.join("\n");
   }
 
   handleInput(ev: Event) {
-    this.$output.value =
-      this.conjugatedContent.join("\n") + this.conjugatedReading.join("\n");
+    this.setConjugatedValues();
   }
 
   dispatch() {
@@ -59,6 +62,7 @@ class Conjugator {
     this.$conjugateContent.value = ConjugateContent;
     this.$conjugateReading.value = ConjugateReading;
     this.dispatch();
+    this.setConjugatedValues();
   }
 }
 
