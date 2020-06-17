@@ -1,6 +1,6 @@
 # decomoji-conjugator
 
-https://decomoji.dev/conjugator
+https://conjugator.decomoji.dev/
 
 すぐ ◯◯、また ◯◯ などのデコモジ活用のテキストを一括で出力するデコモジ支援ツール。
 
