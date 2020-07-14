@@ -1,4 +1,4 @@
-export const ConjugateContent: string = `
+export const ConjugateContents: string = `
 -,
 あの-,
 この-,

@@ -1,4 +1,4 @@
-export const ConjugateReading: string = `
+export const ConjugateReadings: string = `
 -,
 ano-,
 kono-,

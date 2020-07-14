@@ -2,8 +2,8 @@
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 
-import { ConjugateContent } from "./ConjugateContent";
-import { ConjugateReading } from "./ConjugateReading";
+import { ConjugateContents } from "./ConjugateContents";
+import { ConjugateReadings } from "./ConjugateReadings";
 
 class Conjugator {
   $conjugator: HTMLFormElement;
@@ -11,8 +11,8 @@ class Conjugator {
   $reading: HTMLInputElement;
   $conjugateWords: HTMLInputElement;
   $conjugateReadings: HTMLInputElement;
-  $generatedContent: HTMLTextAreaElement;
-  $generatedReading: HTMLTextAreaElement;
+  $generatedContents: HTMLTextAreaElement;
+  $generatedReadings: HTMLTextAreaElement;
 
   constructor() {
     // 要素を取得する
@@ -21,8 +21,8 @@ class Conjugator {
     this.$reading = document.querySelector("#reading");
     this.$conjugateWords = document.querySelector("#conjugateWords");
     this.$conjugateReadings = document.querySelector("#conjugateReadings");
-    this.$generatedContent = document.querySelector("#generatedContent");
-    this.$generatedReading = document.querySelector("#generatedReading");
+    this.$generatedContents = document.querySelector("#generatedContents");
+    this.$generatedReadings = document.querySelector("#generatedReadings");
 
     // 初期化
     this.init();
@@ -43,8 +43,8 @@ class Conjugator {
   }
 
   setConjugatedValues() {
-    this.$generatedContent.value = this.conjugatedContent.join("\n");
-    this.$generatedReading.value = this.conjugatedReading.join("\n");
+    this.$generatedContents.value = this.conjugatedContent.join("\n");
+    this.$generatedReadings.value = this.conjugatedReading.join("\n");
   }
 
   handleInput(ev: Event) {
@@ -62,8 +62,8 @@ class Conjugator {
   }
 
   init() {
-    this.$conjugateWords.value = ConjugateContent;
-    this.$conjugateReadings.value = ConjugateReading;
+    this.$conjugateWords.value = ConjugateContents;
+    this.$conjugateReadings.value = ConjugateReadings;
     this.dispatch();
     this.setConjugatedValues();
   }
