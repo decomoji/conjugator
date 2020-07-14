@@ -33,19 +33,99 @@
 
   --colorBase: var(--colorBlack);
   --colorBaseInvert: var(--colorWhite);
-  --colorLink: var(--colorDanube);
+  --colorLink: var(--colorBlack);
   --colorLinkInvert: var(--colorWhite);
-  --colorFocus: rgba(var(--colorDanubeRGB), 0.5);
+  --colorFocus: rgba(var(--colorBlackRGB), 0.5);
   --colorFocusInvert: rgba(var(--colorWhiteRGB), 0.5);
 
   --bgBase: var(--colorWhite);
-  --bgBand: var(--colorDanube);
+  --bgBand: var(--colorBlack);
 
   --borderInput: var(--colorBlackRGB);
-  --borderInputFocus: var(--colorDanubeRGB);
+  --borderInputFocus: var(--colorBlackRGB);
 
   --contentPadding: 0.75rem;
   --contentWidth: 40rem;
+}
+
+/* テーミング */
+.-Tomato {
+  --colorLink: var(--colorTomato);
+  --colorFocus: rgba(var(--colorTomatoRGB), 0.5);
+  --bgBand: var(--colorTomato);
+  --borderInputFocus: var(--colorTomatoRGB);
+}
+.-Tomato {
+  --colorLink: var(--colorTomato);
+  --colorFocus: rgba(var(--colorTomatoRGB), 0.5);
+  --bgBand: var(--colorTomato);
+  --borderInputFocus: var(--colorTomatoRGB);
+}
+.-Chocolate {
+  --colorLink: var(--colorChocolate);
+  --colorFocus: rgba(var(--colorChocolateRGB), 0.5);
+  --bgBand: var(--colorChocolate);
+  --borderInputFocus: var(--colorChocolateRGB);
+}
+.-Gold {
+  --colorLink: var(--colorGold);
+  --colorFocus: rgba(var(--colorGoldRGB), 0.5);
+  --bgBand: var(--colorGold);
+  --borderInputFocus: var(--colorGoldRGB);
+}
+.-Olive {
+  --colorLink: var(--colorOlive);
+  --colorFocus: rgba(var(--colorOliveRGB), 0.5);
+  --bgBand: var(--colorOlive);
+  --borderInputFocus: var(--colorOliveRGB);
+}
+.-Forest {
+  --colorLink: var(--colorForest);
+  --colorFocus: rgba(var(--colorForestRGB), 0.5);
+  --bgBand: var(--colorForest);
+  --borderInputFocus: var(--colorForestRGB);
+}
+.-Teal {
+  --colorLink: var(--colorTeal);
+  --colorFocus: rgba(var(--colorTealRGB), 0.5);
+  --bgBand: var(--colorTeal);
+  --borderInputFocus: var(--colorTealRGB);
+}
+.-Cerulean {
+  --colorLink: var(--colorCerulean);
+  --colorFocus: rgba(var(--colorCeruleanRGB), 0.5);
+  --bgBand: var(--colorCerulean);
+  --borderInputFocus: var(--colorCeruleanRGB);
+}
+.-Denim {
+  --colorLink: var(--colorDenim);
+  --colorFocus: rgba(var(--colorDenimRGB), 0.5);
+  --bgBand: var(--colorDenim);
+  --borderInputFocus: var(--colorDenimRGB);
+}
+.-Danube {
+  --colorLink: var(--colorDanube);
+  --colorFocus: rgba(var(--colorDanubeRGB), 0.5);
+  --bgBand: var(--colorDanube);
+  --borderInputFocus: var(--colorDanubeRGB);
+}
+.-Lavender {
+  --colorLink: var(--colorLavender);
+  --colorFocus: rgba(var(--colorLavenderRGB), 0.5);
+  --bgBand: var(--colorLavender);
+  --borderInputFocus: var(--colorLavenderRGB);
+}
+.-Azalea {
+  --colorLink: var(--colorAzalea);
+  --colorFocus: rgba(var(--colorAzaleaRGB), 0.5);
+  --bgBand: var(--colorAzalea);
+  --borderInputFocus: var(--colorAzaleaRGB);
+}
+.-Coral {
+  --colorLink: var(--colorCoral);
+  --colorFocus: rgba(var(--colorCoralRGB), 0.5);
+  --bgBand: var(--colorCoral);
+  --borderInputFocus: var(--colorCoralRGB);
 }
 
 /* いわゆるリセットCSS */
