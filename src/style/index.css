@@ -123,6 +123,7 @@ a.-invert:active {
 }
 
 .Header__link {
+  flex: 0 0 auto;
   display: block;
   border-radius: 999rem;
   width: 2.625rem;
