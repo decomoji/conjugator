@@ -21,33 +21,24 @@ html(lang="ja")
 
     section.Main#conjugator
       h2.VisuallyHidden デコモジ活用自動生成
-      .Main__row
-        .Row
-          .Row__item.-tight
-            .InputRow
-              label.InputRow__label(for="word") 単語
-              input.InputRow__input#word(type="text", name="word", value="受託")
-            .InputRow
-              label.InputRow__label(for="reading") 読み
-              input.InputRow__input#reading(type="text", name="reading", value="jutaku")
-          .Row__item
-            .InputRow
-              label.InputRow__label(for="conjugateWords") デコモジ活用
-              input.InputRow__input#conjugateWords(type="text", name="conjugateWords", value="")
-            .InputRow
-              label.InputRow__label(for="conjugateReadings") 活用の読み
-              input.InputRow__input#conjugateReadings(type="text", name="conjugateReadings", value="")
-      
-      .Main__row
-        .Row
-          .Row__item.-half
-            .InputRow
-              label.InputRow__label(for="generatedContent") 生成したデコモジ活用
-              textarea.InputRow__input#generatedContent(name="generatedContent", cols="10", rows="20")
-          .Row__item.-half
-            .InputRow
-              label.InputRow__label(for="generatedReading") 生成した活用の読み
-              textarea.InputRow__input#generatedReading(name="generatedReading", cols="10", rows="20")
+      .Main__word
+        label.Label(for="word") 単語
+        input.Input#word(type="text", name="word", value="受託")
+      .Main__reading
+        label.Label(for="reading") 読み
+        input.Input#reading(type="text", name="reading", value="jutaku")
+      .Main__conjugateWords
+        label.Label(for="conjugateWords") デコモジ活用
+        input.Input#conjugateWords(type="text", name="conjugateWords", value="")
+      .Main__conjugateReadings
+        label.Label(for="conjugateReadings") 活用の読み
+        input.Input#conjugateReadings(type="text", name="conjugateReadings", value="")
+      .Main__generatedContents
+        label.Label(for="generatedContents") 生成したデコモジ活用
+        textarea.Input.-textarea#generatedContents(name="generatedContents")
+      .Main__generatedReadings
+        label.Label(for="generatedReadings") 生成した活用の読み
+        textarea.Input.-textarea#generatedReadings(name="generatedReadings")
 
     footer.Footer
       .Footer__inner

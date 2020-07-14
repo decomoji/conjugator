@@ -45,7 +45,7 @@
   --borderInputFocus: var(--colorDanubeRGB);
 
   --contentPadding: 0.75rem;
-  --contentWidth: 38rem;
+  --contentWidth: 40rem;
 }
 
 /* いわゆるリセットCSS */
@@ -68,7 +68,7 @@ body {
   padding: 0;
   min-height: 100vh;
   color: var(--colorBlack);
-  font-size: 1rem;
+  font-size: 1.125rem;
   font-family: "Noto Sans JP", sans-serif;
   background-color: var(--bgBase);
 }
@@ -142,7 +142,7 @@ a.-invert:active {
 .Header__desc {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 
 /* フッター */
@@ -157,6 +157,7 @@ a.-invert:active {
   margin: auto;
   padding: var(--contentPadding);
   max-width: var(--contentWidth);
+  font-size: 1rem;
 }
 
 .Footer__inner > * + * {
@@ -166,71 +167,77 @@ a.-invert:active {
 .Footer__credit {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 0.8125rem;
 }
 
 .Footer__license {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 0.8125rem;
 }
 
 /* メインエリア */
 .Main {
-  margin: auto;
-  padding: var(--contentPadding);
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    " w cw cw cw"
+    " r cr cr cr"
+    "gc gc gr gr";
+  gap: 1rem;
+  margin: 0 auto;
+  padding: 0 var(--contentPadding);
   max-width: var(--contentWidth);
   width: 100%;
 }
 
-.Main > * + * {
-  margin-top: 1rem;
+.Main__word {
+  grid-area: w;
 }
 
-/* 横並びアイテムを持つコンテナ */
-.Row {
-  display: flex;
-  margin: -0.5rem;
+.Main__reading {
+  grid-area: r;
 }
 
-.Row__item {
-  flex: 1 1 auto;
-  padding: 0.5rem;
+.Main__conjugateWords {
+  grid-area: cw;
 }
 
-.Row__item.-tight {
-  max-width: 30%;
+.Main__conjugateReadings {
+  grid-area: cr;
 }
 
-.Row__item.-half {
-  max-width: 50%;
+.Main__generatedContents {
+  grid-area: gc;
 }
 
-.Row__item > * + * {
-  margin-top: 0.5rem;
+.Main__generatedReadings {
+  grid-area: gr;
 }
 
-/* ラベルとフォームを収める箱 */
-.InputRow {
-  color: inherit;
-}
-
-.InputRow__label {
+/* ラベルとフォーム */
+.Label {
   display: block;
   font-size: 0.875rem;
 }
 
-.InputRow__input {
+.Input {
   padding: 0.375rem;
   border: 1px solid rgba(var(--borderInput), 0.25);
   border-radius: 0.125rem;
   width: 100%;
-  font-size: 1rem;
+  color: inherit;
+  font-size: 1.0625rem;
   line-height: 1.4;
   vertical-align: top;
 }
 
-.InputRow__input:focus {
+.Input.-textarea {
+  width: 18.75rem;
+  min-height: 52.0625rem;
+  resize: vertical;
+}
+
+.Input:focus {
   border-color: rgba(var(--borderInputFocus), 1);
 }
 
