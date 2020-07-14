@@ -232,7 +232,7 @@ a.-invert:active {
 }
 
 .Input.-textarea {
-  width: 18.75rem;
+  max-width: 18.75rem;
   min-height: 52.0625rem;
   resize: vertical;
 }
