@@ -85,6 +85,13 @@ export class Conjugator {
   setConjugatedValues() {
     this.$generatedContents.value = this.conjugatedContent.join("\n");
     this.$generatedReadings.value = this.conjugatedReading.join("\n");
+
+  // 重複を生成して画面に渡す
+  setDuplicatedValues() {
+    this.$duplicatedContents.value = this.duplicatedReadingIndexs
+      .map((dup) => this.conjugatedContent[dup])
+      .join("\n");
+    this.$duplicatedReadings.value = this.duplicatedReading.join("\n");
   }
 
   handleInput(ev: Event) {
