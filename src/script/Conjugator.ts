@@ -1,4 +1,5 @@
 import DecomojiAll from "decomoji/configs/v5_all.json";
+
 import { ConjugateContents } from "./ConjugateContents";
 import { ConjugateReadings } from "./ConjugateReadings";
 
@@ -35,6 +36,7 @@ export class Conjugator {
     this.init();
   }
 
+  // テンプレートに活用を乗せて配列で返す
   get conjugatedContent() {
     const { value: word } = this.$word;
     const { value: base } = this.$conjugateWords;
@@ -42,6 +44,7 @@ export class Conjugator {
     return base.split(",").map((v) => v.replace("-", word));
   }
 
+  // テンプレートに読みを乗せて配列で返す
   get conjugatedReading() {
     const { value: reading } = this.$reading;
     const { value: base } = this.$conjugateReadings;
@@ -82,6 +85,8 @@ export class Conjugator {
   isDuplicates(name: string) {
     return this.decomojis.includes(name);
   }
+
+  // 活用を生成して画面に渡す
   setConjugatedValues() {
     this.$generatedContents.value = this.duplicateCheck
       ? this.uniqueReadingIndexs
