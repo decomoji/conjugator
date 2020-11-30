@@ -53,6 +53,10 @@ export class Conjugator {
   get duplicateCheck() {
     return this.$duplicationChecker.checked;
   }
+  // デコモジ本体に引数で与えた文字列が含まれているか否かを返す
+  isDuplicates(name: string) {
+    return this.decomojis.includes(name);
+  }
   setConjugatedValues() {
     this.$generatedContents.value = this.conjugatedContent.join("\n");
     this.$generatedReadings.value = this.conjugatedReading.join("\n");
