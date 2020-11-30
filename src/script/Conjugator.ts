@@ -1,3 +1,4 @@
+import DecomojiAll from "decomoji/configs/v5_all.json";
 import { ConjugateContents } from "./ConjugateContents";
 import { ConjugateReadings } from "./ConjugateReadings";
 
@@ -12,6 +13,7 @@ export class Conjugator {
   $duplicationChecker: HTMLInputElement;
   $duplicatedContents: HTMLTextAreaElement;
   $duplicatedReadings: HTMLTextAreaElement;
+  decomojis: string[];
 
   constructor() {
     // 要素を取得する
@@ -25,6 +27,9 @@ export class Conjugator {
     this.$duplicationChecker = document.querySelector("#duplicationChecker");
     this.$duplicatedContents = document.querySelector("#duplicatedContents");
     this.$duplicatedReadings = document.querySelector("#duplicatedReadings");
+
+    // デコモジ本体のファイル名を配列化したもの
+    this.decomojis = DecomojiAll.map((v) => v.name);
 
     // 初期化
     this.init();
