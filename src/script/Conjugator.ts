@@ -49,6 +49,10 @@ export class Conjugator {
     return base.split(",").map((v) => v.replace("-", reading));
   }
 
+  // デコモジ本体と読みを突合させるか否かを返す
+  get duplicateCheck() {
+    return this.$duplicationChecker.checked;
+  }
   setConjugatedValues() {
     this.$generatedContents.value = this.conjugatedContent.join("\n");
     this.$generatedReadings.value = this.conjugatedReading.join("\n");
