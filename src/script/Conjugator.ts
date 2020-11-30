@@ -9,6 +9,9 @@ export class Conjugator {
   $conjugateReadings: HTMLInputElement;
   $generatedContents: HTMLTextAreaElement;
   $generatedReadings: HTMLTextAreaElement;
+  $duplicationChecker: HTMLInputElement;
+  $duplicatedContents: HTMLTextAreaElement;
+  $duplicatedReadings: HTMLTextAreaElement;
 
   constructor() {
     // 要素を取得する
@@ -19,6 +22,9 @@ export class Conjugator {
     this.$conjugateReadings = document.querySelector("#conjugateReadings");
     this.$generatedContents = document.querySelector("#generatedContents");
     this.$generatedReadings = document.querySelector("#generatedReadings");
+    this.$duplicationChecker = document.querySelector("#duplicationChecker");
+    this.$duplicatedContents = document.querySelector("#duplicatedContents");
+    this.$duplicatedReadings = document.querySelector("#duplicatedReadings");
 
     // 初期化
     this.init();
