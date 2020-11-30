@@ -257,12 +257,14 @@ a.-invert:active {
 /* メインエリア */
 .Main {
   display: grid;
-  grid-template-rows: auto auto 1fr;
+  grid-template-rows: auto;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-areas:
     " w cw cw cw"
     " r cr cr cr"
-    "gc gc gr gr";
+    "ch ch ch ch"
+    "gc gc gr gr"
+    "dc dc dr dr";
   gap: 1rem;
   margin: 0 auto;
   padding: 0 var(--contentPadding);
@@ -286,6 +288,10 @@ a.-invert:active {
   grid-area: cr;
 }
 
+.Main__duplicationChecker {
+  grid-area: ch;
+}
+
 .Main__generatedContents {
   grid-area: gc;
 }
@@ -294,10 +300,21 @@ a.-invert:active {
   grid-area: gr;
 }
 
+.Main__duplicatedContents {
+  grid-area: dc;
+}
+
+.Main__duplicatedReadings {
+  grid-area: dr;
+}
+
 /* ラベルとフォーム */
 .Label {
   display: block;
   font-size: 0.875rem;
+}
+.Label.-inline {
+  display: inline;
 }
 
 .Input {
@@ -311,10 +328,23 @@ a.-invert:active {
   vertical-align: top;
 }
 
+.Input.-checkbox {
+  border: initial;
+  width: auto;
+  vertical-align: middle;
+}
+
 .Input.-textarea {
   max-width: 18.75rem;
-  min-height: 300px;
   resize: vertical;
+}
+
+.Input.-textarea.-high {
+  min-height: 450px;
+}
+
+.Input.-textarea.-low {
+  min-height: 100px;
 }
 
 .Input:focus {
