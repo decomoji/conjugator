@@ -75,11 +75,12 @@ export class Conjugator {
     return this.conjugatedReading.filter((v) => !this.isDuplicates(v));
   }
 
-  // デコモジ本体と読みを突合させて重複していない読みの index を配列で返す
-  get uniqueReadingIndexs() {
+  // デコモジ本体と読みを突合させて重複していない活用を配列で返す
+  get uniqueContent() {
     return this.conjugatedReading
       .map((v, i) => (this.isDuplicates(v) ? null : i.toString()))
-      .filter((v) => v);
+      .filter((v) => v)
+      .map((uniq) => this.conjugatedContent[Number(uniq)]);
   }
 
   // デコモジ本体に引数で与えた文字列が含まれているか否かを返す
