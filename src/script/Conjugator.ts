@@ -96,6 +96,7 @@ export class Conjugator {
 
   handleInput(ev: Event) {
     this.setConjugatedValues();
+    this.setDuplicatedValues();
   }
 
   dispatch() {
@@ -113,5 +114,6 @@ export class Conjugator {
     this.$conjugateReadings.value = ConjugateReadings;
     this.dispatch();
     this.setConjugatedValues();
+    this.setDuplicatedValues();
   }
 }
