@@ -14,6 +14,7 @@
     "core-js": "^3.6.5"
   },
   "devDependencies": {
+    "@prettier/plugin-pug": "^1.13.0",
     "autoprefixer": "^9.8.0",
     "commitizen": "^4.2.2",
     "cz-customizable": "^6.3.0",
