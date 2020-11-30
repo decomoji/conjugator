@@ -58,6 +58,13 @@ export class Conjugator {
   get duplicatedReading() {
     return this.conjugatedReading.filter((v) => this.isDuplicates(v));
   }
+
+  // デコモジ本体と読みを突合させて重複する読みの index を配列で返す
+  get duplicatedReadingIndexs() {
+    return this.conjugatedReading
+      .map((v, i) => (this.isDuplicates(v) ? i : null))
+      .filter((v) => v);
+  }
   // デコモジ本体に引数で与えた文字列が含まれているか否かを返す
   isDuplicates(name: string) {
     return this.decomojis.includes(name);
