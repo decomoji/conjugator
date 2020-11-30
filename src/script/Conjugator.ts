@@ -70,6 +70,14 @@ export class Conjugator {
   get uniqueReading() {
     return this.conjugatedReading.filter((v) => !this.isDuplicates(v));
   }
+
+  // デコモジ本体と読みを突合させて重複していない読みの index を配列で返す
+  get uniqueReadingIndexs() {
+    return this.conjugatedReading
+      .map((v, i) => (this.isDuplicates(v) ? null : i.toString()))
+      .filter((v) => v);
+  }
+
   // デコモジ本体に引数で与えた文字列が含まれているか否かを返す
   isDuplicates(name: string) {
     return this.decomojis.includes(name);
