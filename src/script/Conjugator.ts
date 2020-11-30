@@ -62,11 +62,12 @@ export class Conjugator {
     return this.conjugatedReading.filter((v) => this.isDuplicates(v));
   }
 
-  // デコモジ本体と読みを突合させて重複する読みの index を配列で返す
-  get duplicatedReadingIndexs() {
+  // デコモジ本体と読みを突合させて重複する活用をを配列で返す
+  get duplicatedContent() {
     return this.conjugatedReading
-      .map((v, i) => (this.isDuplicates(v) ? i : null))
-      .filter((v) => v);
+      .map((v, i) => (this.isDuplicates(v) ? i.toString() : null))
+      .filter((v) => v)
+      .map((dup) => this.conjugatedContent[Number(dup)]);
   }
 
   // デコモジ本体と読みを突合させて重複する読みを配列で返す
