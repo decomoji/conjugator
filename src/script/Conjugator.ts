@@ -102,9 +102,7 @@ export class Conjugator {
 
   // 重複を生成して画面に渡す
   setDuplicatedValues() {
-    this.$duplicatedContents.value = this.duplicatedReadingIndexs
-      .map((dup) => this.conjugatedContent[dup])
-      .join("\n");
+    this.$duplicatedContents.value = this.duplicatedContent.join("\n");
     this.$duplicatedReadings.value = this.duplicatedReading.join("\n");
   }
 
