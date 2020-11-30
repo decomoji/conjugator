@@ -17,6 +17,7 @@
     "autoprefixer": "^9.8.0",
     "commitizen": "^4.2.2",
     "cz-customizable": "^6.3.0",
+    "decomoji": "github:decomoji/decomoji",
     "husky": "^4.3.0",
     "parcel-bundler": "^1.12.4",
     "prettier": "^2.2.1",
