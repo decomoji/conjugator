@@ -90,14 +90,14 @@ export class Conjugator {
 
   // 活用を生成して画面に渡す
   setConjugatedValues() {
-    this.$generatedContents.value = this.duplicateCheck
-      ? this.uniqueReadingIndexs
-          .map((uniq) => this.conjugatedContent[Number(uniq)])
-          .join("\n")
-      : this.conjugatedContent.join("\n");
-    this.$generatedReadings.value = this.duplicateCheck
-      ? this.uniqueReading.join("\n")
-      : this.conjugatedReading.join("\n");
+    this.$generatedContents.value = (this.duplicateCheck
+      ? this.uniqueContent
+      : this.conjugatedContent
+    ).join("\n");
+    this.$generatedReadings.value = (this.duplicateCheck
+      ? this.uniqueReading
+      : this.conjugatedReading
+    ).join("\n");
   }
 
   // 重複を生成して画面に渡す
