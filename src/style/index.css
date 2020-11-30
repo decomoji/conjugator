@@ -257,7 +257,7 @@ a.-invert:active {
 /* メインエリア */
 .Main {
   display: grid;
-  grid-template-rows: auto;
+  grid-template-rows: auto auto auto auto auto 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-areas:
     " w cw cw cw"
@@ -340,11 +340,11 @@ a.-invert:active {
 }
 
 .Input.-textarea.-high {
-  min-height: 450px;
+  min-height: 300px;
 }
 
 .Input.-textarea.-low {
-  min-height: 100px;
+  min-height: 300px;
 }
 
 .Input:focus {
