@@ -4,41 +4,78 @@ html(lang="ja")
     meta(charset="UTF-8")
     title デコモジコンジュゲーター
     meta(content="width=device-width", name="viewport")
-    meta(name='viewport', content='width=device-width,initial-scale=1.0')
-    link(rel='shortcut icon', href='/favicon.ico', type='image/x-icon')
-    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&subset=japanese&display=swap')
+    meta(name="viewport", content="width=device-width,initial-scale=1.0")
+    link(rel="shortcut icon", href="favicon.ico", type="image/x-icon")
+    link(
+      rel="stylesheet",
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&subset=japanese&display=swap"
+    )
     link(rel="stylesheet", href="style/index.css")
     script(src="script/index.ts")
 
   body.Conjugator
     h1.VisuallyHidden デコモジコンジュゲーター
-    
+
     header.Header
       .Header__inner
         a.Header__link.-invert(href="./")
-          img.Header__logo(src="image/logo.png", width="42", height="42", alt="デコモジコンジュゲーター")
+          img.Header__logo(
+            src="image/logo.png",
+            width="42",
+            height="42",
+            alt="デコモジコンジュゲーター"
+          )
         p.Header__desc １つの単語から派生するデコモジ活用を自動生成するウェブアプリです。
 
-    section.Main#conjugator
+    section#conjugator.Main
       h2.VisuallyHidden デコモジ活用自動生成
       .Main__word
         label.Label(for="word") 単語
-        input.Input#word(type="text", name="word", value="受託")
+        input#word.Input(type="text", name="word", value="受託")
       .Main__conjugateWords
         label.Label(for="conjugateWords") デコモジ活用
-        input.Input#conjugateWords(type="text", name="conjugateWords", value="")
+        input#conjugateWords.Input(
+          type="text",
+          name="conjugateWords",
+          value=""
+        )
       .Main__reading
         label.Label(for="reading") 読み
-        input.Input#reading(type="text", name="reading", value="jutaku")
+        input#reading.Input(type="text", name="reading", value="zyutaku")
       .Main__conjugateReadings
         label.Label(for="conjugateReadings") 活用の読み
-        input.Input#conjugateReadings(type="text", name="conjugateReadings", value="")
+        input#conjugateReadings.Input(
+          type="text",
+          name="conjugateReadings",
+          value=""
+        )
+      .Main__duplicationChecker
+        input#duplicationChecker.Input.-checkbox(
+          type="checkbox",
+          name="duplicationChecker",
+          checked
+        )
+        label.Label.-inline(for="duplicationChecker") デコモジ本体との重複を取り除く
       .Main__generatedContents
         label.Label(for="generatedContents") 生成したデコモジ活用
-        textarea.Input.-textarea#generatedContents(name="generatedContents")
+        textarea#generatedContents.Input.-textarea.-high(
+          name="generatedContents"
+        )
       .Main__generatedReadings
         label.Label(for="generatedReadings") 生成した活用の読み
-        textarea.Input.-textarea#generatedReadings(name="generatedReadings")
+        textarea#generatedReadings.Input.-textarea.-high(
+          name="generatedReadings"
+        )
+      .Main__duplicatedContents
+        label.Label(for="duplicatedContents") 重複していた活用
+        textarea#duplicatedContents.Input.-textarea.-low(
+          name="duplicatedContents"
+        )
+      .Main__duplicatedReadings
+        label.Label(for="duplicatedReadings") 重複していた読み
+        textarea#duplicatedReadings.Input.-textarea.-low(
+          name="duplicatedReadings"
+        )
 
     footer.Footer
       .Footer__inner
