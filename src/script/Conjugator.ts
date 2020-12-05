@@ -41,7 +41,7 @@ export class Conjugator {
     const { value: word } = this.$word;
     const { value: base } = this.$conjugateWords;
 
-    return base.split(",").map((v) => v.replace("-", word));
+    return base.split(",").map((v) => v.replace("~", word));
   }
 
   // テンプレートに読みを乗せて配列で返す
@@ -49,7 +49,7 @@ export class Conjugator {
     const { value: reading } = this.$reading;
     const { value: base } = this.$conjugateReadings;
 
-    return base.split(",").map((v) => v.replace("-", reading));
+    return base.split(",").map((v) => v.replace("~", reading));
   }
 
   // デコモジ本体と読みを突合させるか否かを返す
