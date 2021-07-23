@@ -55,7 +55,10 @@ html(lang="ja")
           name="duplicationChecker",
           checked
         )
-        label.Label.-inline(for="duplicationChecker") デコモジ本体との重複を取り除く
+        label.Label.-inline(for="duplicationChecker")
+          | デコモジ本体（v
+          span#decomojiVersion
+          | ）との重複を取り除く
       .Main__generatedContents
         label.Label(for="generatedContents") 生成したデコモジ活用
         textarea#generatedContents.Input.-textarea.-high(

@@ -1,3 +1,5 @@
+import decomojiPackage from "decomoji/package.json";
+
 // for IE11
 import "core-js/stable";
 import "regenerator-runtime/runtime";
@@ -9,6 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add(
     ThemeNames[Math.floor(Math.random() * ThemeNames.length)]
   );
+
+  document.querySelector("#decomojiVersion").textContent =
+    decomojiPackage.version;
 
   // 活用生成を実行する
   new Conjugator();
