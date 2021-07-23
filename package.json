@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel src/index.pug --open --out-dir .cache",
-    "build": "npx run update:decomoji && parcel build src/index.pug --no-source-maps --public-url ./",
+    "build": "parcel build src/index.pug --no-source-maps --public-url ./",
     "prepare": "husky install",
     "update:decomoji": "rm -rf node_modules/decomoji && npm i -d decomoji/decomoji"
   },
