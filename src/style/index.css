@@ -257,14 +257,14 @@ a.-invert:active {
 /* メインエリア */
 .Main {
   display: grid;
-  grid-template-rows: auto auto auto auto auto 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-areas:
-    " w cw cw cw"
-    " r cr cr cr"
-    "ch ch ch ch"
-    "gc gc gr gr"
-    "dc dc dr dr";
+  grid-template:
+    " t  t  t  t" auto
+    " w cw cw cw" auto
+    " r cr cr cr" auto
+    "ch ch ch ch" auto
+    "gc gc gr gr" auto
+    "dc dc dr dr" 1fr
+    /1fr 1fr 1fr 1fr;
   gap: 1rem;
   margin: 0 auto;
   padding: 0 var(--contentPadding);
@@ -272,39 +272,56 @@ a.-invert:active {
   width: 100%;
 }
 
-.Main__word {
+.Type {
+  grid-area: t;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.Type__label {
+  margin: 0;
+  width: 100%;
+  font-size: 0.875rem;
+}
+
+.Type__item + .Type__item {
+  margin-left: 1rem;
+}
+
+.Word {
   grid-area: w;
 }
 
-.Main__reading {
+.Reading {
   grid-area: r;
 }
 
-.Main__conjugateWords {
+.ConjugateWords {
   grid-area: cw;
 }
 
-.Main__conjugateReadings {
+.ConjugateReadings {
   grid-area: cr;
 }
 
-.Main__duplicationChecker {
+.DuplicationChecker {
   grid-area: ch;
 }
 
-.Main__generatedContents {
+.GeneratedContents {
   grid-area: gc;
 }
 
-.Main__generatedReadings {
+.GeneratedReadings {
   grid-area: gr;
 }
 
-.Main__duplicatedContents {
+.DuplicatedContents {
   grid-area: dc;
 }
 
-.Main__duplicatedReadings {
+.DuplicatedReadings {
   grid-area: dr;
 }
 
@@ -328,7 +345,7 @@ a.-invert:active {
   vertical-align: top;
 }
 
-.Input.-checkbox {
+.Input.-selection {
   border: initial;
   width: auto;
   vertical-align: middle;

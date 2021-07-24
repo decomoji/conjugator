@@ -27,30 +27,51 @@ html(lang="ja")
           )
         p.Header__desc １つの単語から派生するデコモジ活用を自動生成するウェブアプリです。
 
-    section#conjugator.Main
+    form#conjugator.Main
+      h2.VisuallyHidden デコモジ活用選択
+      .Type
+        p.Type__label 活用タイプ
+        .Type__item
+          input#kosoado.Input.-selection(
+            type="radio",
+            name="type",
+            value="0",
+            checked
+          )
+          label.Label.-inline(for="kosoado") こそあど太郎
+        .Type__item
+          input#-oreneko.Input.-selection(type="radio", name="type", value="1")
+          label.Label.-inline(for="-oreneko") 〜俺猫金夢
+        .Type__item
+          input#oreneko-.Input.-selection(type="radio", name="type", value="2")
+          label.Label.-inline(for="oreneko-") 俺猫金夢〜
+        .Type__item
+          input#manual.Input.-selection(type="radio", name="type", value="3")
+          label.Label.-inline(for="manual") マニュアル編集
+
       h2.VisuallyHidden デコモジ活用自動生成
-      .Main__word
+      .Word
         label.Label(for="word") 単語
         input#word.Input(type="text", name="word", value="受託")
-      .Main__conjugateWords
+      .ConjugateWords
         label.Label(for="conjugateWords") デコモジ活用
         input#conjugateWords.Input(
           type="text",
           name="conjugateWords",
           value=""
         )
-      .Main__reading
+      .Reading
         label.Label(for="reading") 読み
         input#reading.Input(type="text", name="reading", value="zyutaku")
-      .Main__conjugateReadings
+      .ConjugateReadings
         label.Label(for="conjugateReadings") 活用の読み
         input#conjugateReadings.Input(
           type="text",
           name="conjugateReadings",
           value=""
         )
-      .Main__duplicationChecker
-        input#duplicationChecker.Input.-checkbox(
+      .DuplicationChecker
+        input#duplicationChecker.Input.-selection(
           type="checkbox",
           name="duplicationChecker",
           checked
@@ -59,25 +80,29 @@ html(lang="ja")
           | デコモジ本体（v
           span#decomojiVersion
           | ）との重複を取り除く
-      .Main__generatedContents
+      .GeneratedContents
         label.Label(for="generatedContents") 生成したデコモジ活用
         textarea#generatedContents.Input.-textarea.-high(
-          name="generatedContents"
+          name="generatedContents",
+          readonly
         )
-      .Main__generatedReadings
+      .GeneratedReadings
         label.Label(for="generatedReadings") 生成した活用の読み
         textarea#generatedReadings.Input.-textarea.-high(
-          name="generatedReadings"
+          name="generatedReadings",
+          readonly
         )
-      .Main__duplicatedContents
+      .DuplicatedContents
         label.Label(for="duplicatedContents") 重複していた活用
         textarea#duplicatedContents.Input.-textarea.-low(
-          name="duplicatedContents"
+          name="duplicatedContents",
+          readonly
         )
-      .Main__duplicatedReadings
+      .DuplicatedReadings
         label.Label(for="duplicatedReadings") 重複していた読み
         textarea#duplicatedReadings.Input.-textarea.-low(
-          name="duplicatedReadings"
+          name="duplicatedReadings",
+          readonly
         )
 
     footer.Footer
