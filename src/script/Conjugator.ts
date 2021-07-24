@@ -88,15 +88,22 @@ export class Conjugator {
     return this.decomojis.includes(name);
   }
 
+  // 活用を切り替えて画面に渡す
+  setConjugateValues() {
+    const t = Number(this.$conjugator.elements["type"].value);
+    // マニュアル編集モードの時は値を上書きしない
+    if (t === 3) return;
+    this.$conjugateWords.value = ConjugateContents[t];
+    this.$conjugateReadings.value = ConjugateReadings[t];
+  }
+
   // 活用を生成して画面に渡す
   setConjugatedValues() {
-    this.$generatedContents.value = (this.duplicateCheck
-      ? this.uniqueContent
-      : this.conjugatedContent
+    this.$generatedContents.value = (
+      this.duplicateCheck ? this.uniqueContent : this.conjugatedContent
     ).join("\n");
-    this.$generatedReadings.value = (this.duplicateCheck
-      ? this.uniqueReading
-      : this.conjugatedReading
+    this.$generatedReadings.value = (
+      this.duplicateCheck ? this.uniqueReading : this.conjugatedReading
     ).join("\n");
   }
 
@@ -106,7 +113,8 @@ export class Conjugator {
     this.$duplicatedReadings.value = this.duplicatedReading.join("\n");
   }
 
-  handleInput(ev: Event) {
+  handleInput() {
+    this.setConjugateValues();
     this.setConjugatedValues();
     this.setDuplicatedValues();
   }
@@ -114,17 +122,16 @@ export class Conjugator {
   dispatch() {
     this.$conjugator.addEventListener(
       "input",
-      (ev: Event) => {
-        this.handleInput(ev);
+      () => {
+        this.handleInput();
       },
       false
     );
   }
 
   init() {
-    this.$conjugateWords.value = ConjugateContents;
-    this.$conjugateReadings.value = ConjugateReadings;
     this.dispatch();
+    this.setConjugateValues();
     this.setConjugatedValues();
     this.setDuplicatedValues();
   }
