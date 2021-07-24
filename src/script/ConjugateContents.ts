@@ -81,7 +81,8 @@ export const ConjugateContents: string[] = [
 ~頭,
 ~顔,
 ~体,
-~声`,
+~声,
+~涙`,
   `僕~,
 私~,
 俺~,
@@ -116,5 +117,6 @@ export const ConjugateContents: string[] = [
 頭~,
 顔~,
 体~,
-声~`,
+声~,
+涙~`,
 ];
