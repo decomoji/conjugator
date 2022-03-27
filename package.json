@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "decomoji-conjugator",
-  "version": "1.8.1",
+  "version": "1.8.2",
   "description": "デコモジ活用作成支援ツール",
   "main": "index.html",
   "author": "oti",
