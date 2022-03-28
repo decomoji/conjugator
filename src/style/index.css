@@ -55,12 +55,6 @@
   --bgBand: var(--colorTomato);
   --borderInputFocus: var(--colorTomatoRGB);
 }
-.-Tomato {
-  --colorLink: var(--colorTomato);
-  --colorFocus: rgba(var(--colorTomatoRGB), 0.5);
-  --bgBand: var(--colorTomato);
-  --borderInputFocus: var(--colorTomatoRGB);
-}
 .-Chocolate {
   --colorLink: var(--colorChocolate);
   --colorFocus: rgba(var(--colorChocolateRGB), 0.5);
