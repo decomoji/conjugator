@@ -1,8 +1,5 @@
 import decomojiPackage from "decomoji/package.json";
 
-// for IE11
-import "core-js/stable";
-import "regenerator-runtime/runtime";
 import { Conjugator } from "./Conjugator";
 import { ThemeNames } from "./ThemeNames";
 
