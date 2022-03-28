@@ -5,13 +5,13 @@ html(lang="ja")
     title デコモジコンジュゲーター
     meta(content="width=device-width", name="viewport")
     meta(name="viewport", content="width=device-width,initial-scale=1.0")
-    link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
+    link(rel="shortcut icon", href="./favicon.ico", type="image/x-icon")
     link(
       rel="stylesheet",
       href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&subset=japanese&display=swap"
     )
-    link(rel="stylesheet", href="/style/index.css")
-    script(src="/script/index.ts")
+    link(rel="stylesheet", href="./style/index.css")
+    script(src="./script/index.ts", type="module")
 
   body.Conjugator
     h1.VisuallyHidden デコモジコンジュゲーター
@@ -20,7 +20,7 @@ html(lang="ja")
       .Header__inner
         a.Header__link.-invert(href="./")
           img.Header__logo(
-            src="/image/logo.png",
+            src="./image/logo.png",
             width="42",
             height="42",
             alt="デコモジコンジュゲーター"
