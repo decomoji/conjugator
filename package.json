@@ -18,6 +18,7 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.16.11",
+    "@parcel/css-linux-x64-gnu": "^1.12.2",
     "@parcel/transformer-pug": "^2.4.0",
     "@prettier/plugin-pug": "^1.20.0",
     "autoprefixer": "^10.4.4",
