@@ -9,7 +9,7 @@
     "build": "parcel build src/index.pug --no-optimize --no-source-maps --public-url ./",
     "lint-css": "stylelint dist/*.css",
     "lint-html": "markuplint dist/*.html --ruleset ./markuplintrc",
-    "prepare": "husky install",
+    "prepare": "husky install && node netlify-workaround.mjs",
     "prettier": "prettier --write .",
     "start": "parcel src/index.pug --open",
     "test": "npm run lint-css & npm run lint-html & npm run validate-html",
@@ -18,7 +18,6 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.16.11",
-    "@parcel/css-linux-x64-gnu": "^1.12.2",
     "@parcel/transformer-pug": "^2.4.0",
     "@prettier/plugin-pug": "^1.20.0",
     "autoprefixer": "^10.4.4",
