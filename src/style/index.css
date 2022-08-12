@@ -35,14 +35,11 @@
   --colorBaseInvert: var(--colorWhite);
   --colorLink: var(--colorBlack);
   --colorLinkInvert: var(--colorWhite);
-  --colorFocus: rgba(var(--colorBlackRGB), 0.5);
-  --colorFocusInvert: rgba(var(--colorWhiteRGB), 0.5);
 
   --bgBase: var(--colorWhite);
   --bgBand: var(--colorBlack);
 
   --borderInput: var(--colorBlackRGB);
-  --borderInputFocus: var(--colorBlackRGB);
 
   --contentPadding: 0.75rem;
   --contentWidth: 40rem;
@@ -52,86 +49,62 @@
 .-Tomato {
   --colorAccent: var(--colorTomato);
   --colorLink: var(--colorTomato);
-  --colorFocus: rgba(var(--colorTomatoRGB), 0.5);
   --bgBand: var(--colorTomato);
-  --borderInputFocus: var(--colorTomatoRGB);
 }
 .-Chocolate {
   --colorAccent: var(--colorChocolate);
   --colorLink: var(--colorChocolate);
-  --colorFocus: rgba(var(--colorChocolateRGB), 0.5);
   --bgBand: var(--colorChocolate);
-  --borderInputFocus: var(--colorChocolateRGB);
 }
 .-Gold {
   --colorAccent: var(--colorGold);
   --colorLink: var(--colorGold);
-  --colorFocus: rgba(var(--colorGoldRGB), 0.5);
   --bgBand: var(--colorGold);
-  --borderInputFocus: var(--colorGoldRGB);
 }
 .-Olive {
   --colorAccent: var(--colorOlive);
   --colorLink: var(--colorOlive);
-  --colorFocus: rgba(var(--colorOliveRGB), 0.5);
   --bgBand: var(--colorOlive);
-  --borderInputFocus: var(--colorOliveRGB);
 }
 .-Forest {
   --colorAccent: var(--colorForest);
   --colorLink: var(--colorForest);
-  --colorFocus: rgba(var(--colorForestRGB), 0.5);
   --bgBand: var(--colorForest);
-  --borderInputFocus: var(--colorForestRGB);
 }
 .-Teal {
   --colorAccent: var(--colorTeal);
   --colorLink: var(--colorTeal);
-  --colorFocus: rgba(var(--colorTealRGB), 0.5);
   --bgBand: var(--colorTeal);
-  --borderInputFocus: var(--colorTealRGB);
 }
 .-Cerulean {
   --colorAccent: var(--colorCerulean);
   --colorLink: var(--colorCerulean);
-  --colorFocus: rgba(var(--colorCeruleanRGB), 0.5);
   --bgBand: var(--colorCerulean);
-  --borderInputFocus: var(--colorCeruleanRGB);
 }
 .-Denim {
   --colorAccent: var(--colorDenim);
   --colorLink: var(--colorDenim);
-  --colorFocus: rgba(var(--colorDenimRGB), 0.5);
   --bgBand: var(--colorDenim);
-  --borderInputFocus: var(--colorDenimRGB);
 }
 .-Danube {
   --colorAccent: var(--colorDanube);
   --colorLink: var(--colorDanube);
-  --colorFocus: rgba(var(--colorDanubeRGB), 0.5);
   --bgBand: var(--colorDanube);
-  --borderInputFocus: var(--colorDanubeRGB);
 }
 .-Lavender {
   --colorAccent: var(--colorLavender);
   --colorLink: var(--colorLavender);
-  --colorFocus: rgba(var(--colorLavenderRGB), 0.5);
   --bgBand: var(--colorLavender);
-  --borderInputFocus: var(--colorLavenderRGB);
 }
 .-Azalea {
   --colorAccent: var(--colorAzalea);
   --colorLink: var(--colorAzalea);
-  --colorFocus: rgba(var(--colorAzaleaRGB), 0.5);
   --bgBand: var(--colorAzalea);
-  --borderInputFocus: var(--colorAzaleaRGB);
 }
 .-Coral {
   --colorAccent: var(--colorCoral);
   --colorLink: var(--colorCoral);
-  --colorFocus: rgba(var(--colorCoralRGB), 0.5);
   --bgBand: var(--colorCoral);
-  --borderInputFocus: var(--colorCoralRGB);
 }
 
 /* いわゆるリセットCSS */
@@ -182,12 +155,7 @@ a.-invert:active {
 }
 
 :focus {
-  outline: none;
-  box-shadow: 0 0 0 4px var(--colorFocus);
-}
-
-.-invert:focus {
-  box-shadow: 0 0 0 4px var(--colorFocusInvert);
+  outline-color: var(--colorAccent);
 }
 
 /* ヘッダー */
@@ -369,10 +337,6 @@ a.-invert:active {
 
 .Input.-textarea.-low {
   min-height: 300px;
-}
-
-.Input:focus {
-  border-color: rgba(var(--borderInputFocus), 1);
 }
 
 /* https://github.com/ampproject/amphtml/blob/2e9a940e78df8de38a6c06a0772aeaa4839a24d1/css/ampshared.css#L164-L204 */
