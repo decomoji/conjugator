@@ -50,72 +50,84 @@
 
 /* テーミング */
 .-Tomato {
+  --colorAccent: var(--colorTomato);
   --colorLink: var(--colorTomato);
   --colorFocus: rgba(var(--colorTomatoRGB), 0.5);
   --bgBand: var(--colorTomato);
   --borderInputFocus: var(--colorTomatoRGB);
 }
 .-Chocolate {
+  --colorAccent: var(--colorChocolate);
   --colorLink: var(--colorChocolate);
   --colorFocus: rgba(var(--colorChocolateRGB), 0.5);
   --bgBand: var(--colorChocolate);
   --borderInputFocus: var(--colorChocolateRGB);
 }
 .-Gold {
+  --colorAccent: var(--colorGold);
   --colorLink: var(--colorGold);
   --colorFocus: rgba(var(--colorGoldRGB), 0.5);
   --bgBand: var(--colorGold);
   --borderInputFocus: var(--colorGoldRGB);
 }
 .-Olive {
+  --colorAccent: var(--colorOlive);
   --colorLink: var(--colorOlive);
   --colorFocus: rgba(var(--colorOliveRGB), 0.5);
   --bgBand: var(--colorOlive);
   --borderInputFocus: var(--colorOliveRGB);
 }
 .-Forest {
+  --colorAccent: var(--colorForest);
   --colorLink: var(--colorForest);
   --colorFocus: rgba(var(--colorForestRGB), 0.5);
   --bgBand: var(--colorForest);
   --borderInputFocus: var(--colorForestRGB);
 }
 .-Teal {
+  --colorAccent: var(--colorTeal);
   --colorLink: var(--colorTeal);
   --colorFocus: rgba(var(--colorTealRGB), 0.5);
   --bgBand: var(--colorTeal);
   --borderInputFocus: var(--colorTealRGB);
 }
 .-Cerulean {
+  --colorAccent: var(--colorCerulean);
   --colorLink: var(--colorCerulean);
   --colorFocus: rgba(var(--colorCeruleanRGB), 0.5);
   --bgBand: var(--colorCerulean);
   --borderInputFocus: var(--colorCeruleanRGB);
 }
 .-Denim {
+  --colorAccent: var(--colorDenim);
   --colorLink: var(--colorDenim);
   --colorFocus: rgba(var(--colorDenimRGB), 0.5);
   --bgBand: var(--colorDenim);
   --borderInputFocus: var(--colorDenimRGB);
 }
 .-Danube {
+  --colorAccent: var(--colorDanube);
   --colorLink: var(--colorDanube);
   --colorFocus: rgba(var(--colorDanubeRGB), 0.5);
   --bgBand: var(--colorDanube);
   --borderInputFocus: var(--colorDanubeRGB);
 }
 .-Lavender {
+  --colorAccent: var(--colorLavender);
   --colorLink: var(--colorLavender);
   --colorFocus: rgba(var(--colorLavenderRGB), 0.5);
   --bgBand: var(--colorLavender);
   --borderInputFocus: var(--colorLavenderRGB);
 }
 .-Azalea {
+  --colorAccent: var(--colorAzalea);
   --colorLink: var(--colorAzalea);
   --colorFocus: rgba(var(--colorAzaleaRGB), 0.5);
   --bgBand: var(--colorAzalea);
   --borderInputFocus: var(--colorAzaleaRGB);
 }
 .-Coral {
+  --colorAccent: var(--colorCoral);
   --colorLink: var(--colorCoral);
   --colorFocus: rgba(var(--colorCoralRGB), 0.5);
   --bgBand: var(--colorCoral);
@@ -142,6 +154,7 @@ body {
   padding: 0;
   min-height: 100vh;
   color: var(--colorBlack);
+  accent-color: var(--colorAccent);
   font-size: 1.125rem;
   font-family: "Noto Sans JP", sans-serif;
   background-color: var(--bgBase);
