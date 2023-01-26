@@ -6,31 +6,29 @@
   "author": "oti",
   "license": "MIT",
   "scripts": {
-    "build": "parcel build src/index.pug --no-optimize --no-source-maps --public-url ./",
-    "lint-css": "stylelint dist/*.css",
-    "lint-html": "markuplint dist/*.html --ruleset ./markuplintrc",
+    "build": "parcel build src/**/*.pug --no-optimize --no-source-maps --public-url ./",
+    "markuplint": "markuplint dist/*.html --ruleset ./markuplintrc",
     "prepare": "husky install && node netlify-workaround.mjs",
     "prettier": "prettier --write .",
-    "start": "parcel src/index.pug --open",
-    "test": "npm run lint-css & npm run lint-html & npm run validate-html",
-    "update:decomoji": "rm -rf node_modules/decomoji && npm i -d decomoji/decomoji",
-    "validate-html": "html-validator --file=dist/index.html --verbose"
+    "start": "parcel src/**/*.pug --open --no-cache",
+    "stylelint": "stylelint dist/*.css",
+    "test": "npm run stylelint && npm run markuplint",
+    "update:decomoji": "rm -rf node_modules/decomoji && npm i -d decomoji/decomoji"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.16.11",
-    "@parcel/transformer-pug": "^2.4.0",
-    "@prettier/plugin-pug": "^1.20.0",
-    "autoprefixer": "^10.4.4",
+    "@babel/preset-env": "^7.20.2",
+    "@parcel/transformer-pug": "^2.8.3",
+    "@prettier/plugin-pug": "^2.4.1",
+    "autoprefixer": "^10.4.13",
     "decomoji": "github:decomoji/decomoji",
-    "html-validator-cli": "^2.0.0",
-    "husky": "^7.0.4",
-    "markuplint": "^2.5.0",
-    "parcel": "^2.4.0",
-    "prettier": "^2.6.1",
+    "husky": "^8.0.3",
+    "markuplint": "^3.2.0",
+    "parcel": "^2.8.3",
+    "prettier": "^2.8.3",
     "pretty-quick": "^3.1.3",
     "pug": "^3.0.2",
-    "stylelint": "^14.6.1",
-    "stylelint-config-recommended": "^7.0.0",
-    "typescript": "^4.6.3"
+    "stylelint": "^14.16.1",
+    "stylelint-config-recommended": "^9.0.0",
+    "typescript": "^4.9.4"
   }
 }
