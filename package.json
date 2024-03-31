@@ -16,20 +16,20 @@
     "update:decomoji": "rm -rf node_modules/decomoji && npm i -d decomoji/decomoji"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.20.2",
-    "@parcel/transformer-pug": "^2.8.3",
-    "@prettier/plugin-pug": "^2.4.1",
-    "autoprefixer": "^10.4.13",
+    "@babel/preset-env": "^7.24.3",
+    "@parcel/transformer-pug": "^2.12.0",
+    "@prettier/plugin-pug": "^3.0.0",
+    "autoprefixer": "^10.4.19",
     "decomoji": "github:decomoji/decomoji",
-    "husky": "^8.0.3",
-    "markuplint": "^3.2.0",
-    "parcel": "^2.8.3",
-    "prettier": "^2.8.3",
-    "pretty-quick": "^3.1.3",
+    "husky": "^9.0.11",
+    "markuplint": "^4.4.0",
+    "parcel": "^2.12.0",
+    "prettier": "^3.2.5",
+    "pretty-quick": "^4.0.0",
     "pug": "^3.0.2",
-    "stylelint": "^14.16.1",
-    "stylelint-config-recommended": "^9.0.0",
-    "typescript": "^4.9.4"
+    "stylelint": "^16.3.1",
+    "stylelint-config-recommended": "^14.0.0",
+    "typescript": "^5.4.3"
   },
   "volta": {
     "node": "20.11.1"
