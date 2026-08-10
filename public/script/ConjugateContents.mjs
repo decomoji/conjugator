@@ -1,4 +1,8 @@
-export const ConjugateContents: string[] = [
+/**
+ * 活用タイプごとの活用テンプレート（`~` が単語に置き換わる）
+ * @type {string[]}
+ */
+export const ConjugateContents = [
   `
 ~,
 あの~,

@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>デコモジコンジュゲーター</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&subset=japanese&display=swap"
+    />
+    <link rel="stylesheet" href="./style/index.css" />
+    <script src="./script/index.mjs" type="module"></script>
+  </head>
+
+  <body class="Conjugator">
+    <h1 class="VisuallyHidden">デコモジコンジュゲーター</h1>
+
+    <header class="Header">
+      <div class="Header__inner">
+        <a class="Header__link -invert" href="./">
+          <img
+            class="Header__logo"
+            src="./image/logo.png"
+            width="42"
+            height="42"
+            alt="デコモジコンジュゲーター"
+          />
+        </a>
+        <p class="Header__desc">
+          １つの単語から派生するデコモジ活用を自動生成するウェブアプリです。
+        </p>
+      </div>
+    </header>
+
+    <form id="conjugator" class="Main">
+      <h2 class="VisuallyHidden">デコモジ活用選択</h2>
+      <div class="Type">
+        <p class="Type__label">活用タイプ</p>
+        <div class="Type__item">
+          <input
+            id="kosoado"
+            class="Input -selection"
+            type="radio"
+            name="type"
+            value="0"
+            checked
+          />
+          <label class="Label -inline" for="kosoado">こそあど太郎</label>
+        </div>
+        <div class="Type__item">
+          <input
+            id="-oreneko"
+            class="Input -selection"
+            type="radio"
+            name="type"
+            value="1"
+          />
+          <label class="Label -inline" for="-oreneko">〜俺猫金夢</label>
+        </div>
+        <div class="Type__item">
+          <input
+            id="oreneko-"
+            class="Input -selection"
+            type="radio"
+            name="type"
+            value="2"
+          />
+          <label class="Label -inline" for="oreneko-">俺猫金夢〜</label>
+        </div>
+        <div class="Type__item">
+          <input
+            id="manual"
+            class="Input -selection"
+            type="radio"
+            name="type"
+            value="3"
+          />
+          <label class="Label -inline" for="manual">マニュアル編集</label>
+        </div>
+      </div>
+
+      <h2 class="VisuallyHidden">デコモジ活用自動生成</h2>
+      <div class="Word">
+        <label class="Label" for="word">単語</label>
+        <input id="word" class="Input" type="text" name="word" value="受託" />
+      </div>
+      <div class="ConjugateWords">
+        <label class="Label" for="conjugateWords">デコモジ活用</label>
+        <input
+          id="conjugateWords"
+          class="Input"
+          type="text"
+          name="conjugateWords"
+          value=""
+        />
+      </div>
+      <div class="Reading">
+        <label class="Label" for="reading">読み</label>
+        <input
+          id="reading"
+          class="Input"
+          type="text"
+          name="reading"
+          value="zyutaku"
+        />
+      </div>
+      <div class="ConjugateReadings">
+        <label class="Label" for="conjugateReadings">活用の読み</label>
+        <input
+          id="conjugateReadings"
+          class="Input"
+          type="text"
+          name="conjugateReadings"
+          value=""
+        />
+      </div>
+      <div class="DuplicationChecker">
+        <input
+          id="duplicationChecker"
+          class="Input -selection"
+          type="checkbox"
+          name="duplicationChecker"
+          checked
+        />
+        <label class="Label -inline" for="duplicationChecker"
+          >デコモジ本体（v<span id="decomojiVersion">N/A</span
+          >）との重複を取り除く</label
+        >
+      </div>
+      <div class="GeneratedContents">
+        <label class="Label" for="generatedContents">生成したデコモジ活用</label>
+        <textarea
+          id="generatedContents"
+          class="Input -textarea -high"
+          name="generatedContents"
+          readonly
+        ></textarea>
+      </div>
+      <div class="GeneratedReadings">
+        <label class="Label" for="generatedReadings">生成した活用の読み</label>
+        <textarea
+          id="generatedReadings"
+          class="Input -textarea -high"
+          name="generatedReadings"
+          readonly
+        ></textarea>
+      </div>
+      <div class="DuplicatedContents">
+        <label class="Label" for="duplicatedContents">既存と重複していた活用</label>
+        <textarea
+          id="duplicatedContents"
+          class="Input -textarea -low"
+          name="duplicatedContents"
+          readonly
+        ></textarea>
+      </div>
+      <div class="DuplicatedReadings">
+        <label class="Label" for="duplicatedReadings">既存と重複していた読み</label>
+        <textarea
+          id="duplicatedReadings"
+          class="Input -textarea -low"
+          name="duplicatedReadings"
+          readonly
+        ></textarea>
+      </div>
+    </form>
+
+    <footer class="Footer">
+      <div class="Footer__inner">
+        <p class="Footer__credit">
+          このウェブアプリは<a
+            class="-invert"
+            href="https://twitter.com/otiext"
+            target="_blank"
+            rel="noopener"
+            >oti</a
+          >が作りました。
+        </p>
+        <p class="Footer__license">
+          <a
+            class="-invert"
+            href="https://github.com/decomoji/conjugator/"
+            target="_blank"
+            rel="noopener"
+            >GitHub</a
+          >, MIT License.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

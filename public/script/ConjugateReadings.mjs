@@ -1,4 +1,8 @@
-export const ConjugateReadings: string[] = [
+/**
+ * 活用タイプごとの読みのテンプレート（`~` が読みに置き換わる）
+ * @type {string[]}
+ */
+export const ConjugateReadings = [
   `
 ~,
 ano~,

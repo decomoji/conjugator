@@ -1,4 +1,8 @@
-export const ThemeNames: string[] = [
+/**
+ * body 要素に付与するテーミングクラス名の配列
+ * @type {string[]}
+ */
+export const ThemeNames = [
   "-Tomato",
   "-Chocolate",
   "-Gold",

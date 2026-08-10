@@ -1,0 +1,3 @@
+[build]
+  # ビルドはしない。public/ をそのまま公開する
+  publish = "public"
